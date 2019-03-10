@@ -51,7 +51,7 @@ void Insertion_sort(vector<int>& a, int p, int r)
 		a[i + 1] = temp;
 	}
 }
-void Merge_Insertion_sort(vector<int>& a, int p, int r, int k) //åœ¨é—®é¢˜è§„æ¨¡<=kæ—¶è½¬ä¸ºæ’å…¥æ’åº
+void Merge_Insertion_sort(vector<int>& a, int p, int r, int k) //ÔÚÎÊÌâ¹æÄ£<=kÊ±×ªÎª²åÈëÅÅĞò
 {
 	if (r - p + 1 > k and p < r)
 	{
@@ -82,3 +82,4 @@ int main(void)
 	cout << "Merge sort with insertion sort optimization finished in " << e - b << " ms." << endl;
 	system("pause");
 }
+

@@ -1,4 +1,4 @@
-//Е╞╧Д╨▌Е╫▓Е╧╤Ф▌▓Е╨▐Г └Е╬╝Х╟┐
+//╤тсз╧И╡╒еепР╣дн╒╣В
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -47,3 +47,4 @@ int main(void)
 	cout<<Merge_inversion_count(vi, 0, vi.size() - 1);
 	system("pause");
 }
+

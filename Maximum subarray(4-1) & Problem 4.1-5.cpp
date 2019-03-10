@@ -37,20 +37,20 @@ auto find_max_subarray(vector<int>& v,int begin,int end) ->tuple<int,int,int>
 	else if (get<2>(rres) >= get<2>(lres) and get<2>(rres) >= get<2>(crossres)) return rres;
 	else return crossres;
 }
-auto linearComplexity(vector<int>& v, int begin, int end) ->tuple<int, int, int> //æ€è€ƒé¢˜4.1-5
+auto linearComplexity(vector<int>& v, int begin, int end) ->tuple<int, int, int> //Ë¼¿¼Ìâ4.1-5
 {
 	int sum = 0, max = 0, lindex = 0, rindex = 0, temp = 0;
 	for (int i = begin;i != end; ++i)
 	{
 		sum += v[i];
-		if (sum > max) {         //ä»…å½“å‡ºç°å’Œæ›´å¤§çš„åºåˆ—æ—¶ï¼Œæ›´æ–°ä¸‰ä¸ªè¾“å‡ºå˜é‡
+		if (sum > max) {         //½öµ±³öÏÖºÍ¸ü´óµÄĞòÁĞÊ±£¬¸üĞÂÈı¸öÊä³ö±äÁ¿
 			max = sum;
 			lindex = temp;
 			rindex = i;
 		}
-		else if (sum < 0) {      //å¦‚æœsum<0,è¯´æ˜è¿™ä¸€æ®µåºåˆ—ä¸åº”è¯¥å®Œæ•´åœ°ä½äºæœ€åç»“æœåºåˆ—ä¸­(1.å› ä¸ºç»“æœåºåˆ—æ’é™¤æ‰è¿™ä¸€æ®µå®Œæ•´åºåˆ—å¯ä»¥æ›´å¤§ 2.è¿™ä¸€æ®µåºåˆ—çš„ä¸€éƒ¨åˆ†å¯èƒ½æ˜¯æœ€ç»ˆç»“æœ)
-			sum = 0;			 //é‡ç½®sum,æ›´æ–°ä¸€ä¸ªä¸´æ—¶å˜é‡ï¼Œä»£è¡¨æ–°çš„åºåˆ—çš„å·¦ç«¯ä½ç½®
-			temp = i + 1;        //åŸºäºå‰è¿°2.çš„åŸå› ï¼Œä¸èƒ½ç›´æ¥æ›´æ–°lindex
+		else if (sum < 0) {      //Èç¹ûsum<0,ËµÃ÷ÕâÒ»¶ÎĞòÁĞ²»Ó¦¸ÃÍêÕûµØÎ»ÓÚ×îºó½á¹ûĞòÁĞÖĞ(1.ÒòÎª½á¹ûĞòÁĞÅÅ³ıµôÕâÒ»¶ÎÍêÕûĞòÁĞ¿ÉÒÔ¸ü´ó 2.ÕâÒ»¶ÎĞòÁĞµÄÒ»²¿·Ö¿ÉÄÜÊÇ×îÖÕ½á¹û)
+			sum = 0;			 //ÖØÖÃsum,¸üĞÂÒ»¸öÁÙÊ±±äÁ¿£¬´ú±íĞÂµÄĞòÁĞµÄ×ó¶ËÎ»ÖÃ
+			temp = i + 1;        //»ùÓÚÇ°Êö2.µÄÔ­Òò£¬²»ÄÜÖ±½Ó¸üĞÂlindex
 		}
 	}
 	return { lindex,rindex,max };
@@ -65,3 +65,4 @@ int main()
 	cout << endl << "with max sum of " << get<2>(res);
 	system("pause");
 }
+
