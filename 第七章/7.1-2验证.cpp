@@ -13,8 +13,9 @@ int fun_7_1_2(vector<int>& A, int p, int r)
 		}
 	}
 	swap(A[i + 1], A[r]);
-	return i + 1 + (count ) / 2;
+	return i + 1 + count / 2;
 }
+//注：该分割算法并不能保证相等元素都连续地位于中间部分，只是适用于此题，并能正确进行快速排序而已
 int main()
 {
 	vector<int> vi(100, 1);
