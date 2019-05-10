@@ -41,6 +41,10 @@ public:
 	min_heap(vector<int> vi) : _vi(vi),_heapSZ(vi.size()) {
 		BUILD_MIN_HEAP();
 	}
+	bool empty()
+	{
+		return !_heapSZ;
+	}
 	void push(int i)
 	{
 		_vi.push_back(i);
@@ -49,6 +53,10 @@ public:
 	}
 	void pop()
 	{
+		if (this->empty()) {
+			cout << "Error.";
+			return;
+		}
 		swap(*_vi.begin(), *_vi.rbegin());
 		_vi.erase(--_vi.end());
 		_heapSZ--;
@@ -56,20 +64,14 @@ public:
 	}
 	int ask()
 	{
+		if (this->empty()) {
+			cout << "Error.";
+			return -1;
+		}
 		return _vi[0];
 	}
 };
 int main(void)
 {
 	min_heap mh;
-	mh.push(1);
-	mh.push(2);
-	mh.push(3);
-	mh.push(4);
-	cout << mh.ask() << endl;
-	mh.pop();
-	cout << mh.ask() << endl;
-	mh.push(1);
-	cout << mh.ask() << endl;
-	system("pause");
 }
